@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ObjectClicker : MonoBehaviour
 {
     public GameObject creature;
     CreatureController creatureController;
-
     private void Start()
     {
         creatureController = creature.GetComponent<CreatureController>();
@@ -20,7 +20,10 @@ public class ObjectClicker : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                
+                if (hit.transform.name == "Creature")
+                {
+                    print("The creature is dancing!");
+                }
             }
         }
     }

@@ -15,21 +15,25 @@ public class CreatureController : MonoBehaviour
 
     public void Increment(string statToTrain)
     {
-        Debug.Log($"Incrementing {statToTrain}");
+
         if (statToTrain == "Stamina")
         {
+            Debug.Log($"Incrementing {statToTrain} by {staminaIncrease}");
             stamina += staminaIncrease;
         }
         else if (statToTrain == "Agility")
         {
+            Debug.Log($"Incrementing {statToTrain} by {agilityIncrease}");
             agility += agilityIncrease;
         }
         else if (statToTrain == "Strength")
         {
+            Debug.Log($"Incrementing {statToTrain} by {strengthIncrease}");
             strength += strengthIncrease;
         }
         else if (statToTrain == "Speed")
         {
+            Debug.Log($"Incrementing {statToTrain} by {speedIncrease}");
             speed += speedIncrease;
         }
     }
