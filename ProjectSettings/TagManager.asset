@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Creature
   - Button
+  - Wallet
   layers:
   - Default
   - TransparentFX
