@@ -11,10 +11,12 @@ public class Manager : MonoBehaviour
 {
     public int coinCount = 1000;
     public Text wallet;
-
     public string[] statNames = { "Agility", "Speed", "Stamina", "Strength" };
     public string[] statValues = { "XP", "Level", "IncrementAmount", "UpgradeCost" };
     public Dictionary<string, Dictionary<string, int>> statDict = new Dictionary<string, Dictionary<string, int>>();
+
+    private System.Random random = new System.Random();
+    private int coinEventCount;
 
 
     private void Start()
@@ -33,7 +35,7 @@ public class Manager : MonoBehaviour
     private void Update()
     {
         UpdateCoins(0);  // Display current amount of coins
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -48,6 +50,11 @@ public class Manager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        RandomPickupCoins(10, 100);
     }
 
     public void Increment(string statToTrain)
@@ -84,5 +91,24 @@ public class Manager : MonoBehaviour
         wallet.text = $"Coins: {coinCount}";
     }
     
+    public void RandomPickupCoins(float meanPeriod, int maxPickup)
+    {
+        // 
+        float frequency = meanPeriod / Time.fixedDeltaTime;
+
+        int numberOfAttempts = (int)frequency;
+        int randNum = random.Next(numberOfAttempts + 1);
+        if (randNum == 69)
+        {
+            //These 2 lines were used for checking interval of pickups. The value logged should tend towards meanPeriod over time. If need to do again, initialise coinEventCount to 0 in start()
+            //coinEventCount++;
+            //print($"Mean interval of pickups = {Time.fixedTime / coinEventCount}");
+
+            int amountFound = random.Next(2, maxPickup + 1);
+            print($"Nice! The creature found {amountFound} coins.");
+            coinCount += amountFound;
+        }
+
+    }
     
 }

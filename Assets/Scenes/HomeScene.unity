@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d278b5d0f7ab5841a8b569b0a4b2f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 10000
+  coinCount: 1000
   wallet: {fileID: 1691595488}
   statNames:
   - Agility
