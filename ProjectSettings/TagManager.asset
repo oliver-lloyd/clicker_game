@@ -9,6 +9,10 @@ TagManager:
   - Wallet
   - Counter
   - Train
+  - Ground
+  - Flag
+  - Eye
+  - WinScreen
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,5 @@
+- Will need to keep the Manager script loaded and not destroyed between scene changes so that creature stats can be kept 
+	- or have them both active at same time?
+- how to do save system?
+	- Save as json?
+
