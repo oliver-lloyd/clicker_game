@@ -2,4 +2,6 @@
 	- or have them both active at same time?
 - how to do save system?
 	- Save as json?
-
+- Have a value generated each time training happens based roughly on the players respective stat level with some randomness added and keep track of personal bests and world records and stuff
+	- World records could reward with money
+	- Could offer in game purchases that guarantee good performance or something
