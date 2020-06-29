@@ -164,7 +164,5 @@ public class Manager : MonoBehaviour
             print($"Nice! The creature found {amountFound} coins.");
             coinCount += amountFound;
         }
-
     }
-    
 }

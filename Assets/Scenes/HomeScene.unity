@@ -2363,73 +2363,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729032300}
   m_CullTransparentMesh: 0
---- !u!1 &1818807052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1818807054}
-  - component: {fileID: 1818807053}
-  m_Layer: 0
-  m_Name: _Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1818807053
+--- !u!114 &1818807053 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+    type: 3}
+  m_PrefabInstance: {fileID: 4615082070954008034}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818807052}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d278b5d0f7ab5841a8b569b0a4b2f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 1000
-  wallet: {fileID: 1691595488}
-  agilityCounter: {fileID: 1338831758}
-  speedCounter: {fileID: 1969984313}
-  staminaCounter: {fileID: 1424495270}
-  strengthCounter: {fileID: 14633119}
-  agilityUpgrade: {fileID: 1619731251}
-  speedUpgrade: {fileID: 1363970479}
-  staminaUpgrade: {fileID: 1947119655}
-  strengthUpgrade: {fileID: 1323446484}
-  agilityIncrement: {fileID: 1231391309}
-  speedIncrement: {fileID: 1466099026}
-  staminaIncrement: {fileID: 86543520}
-  strengthIncrement: {fileID: 818521516}
-  statNames:
-  - Agility
-  - Speed
-  - Stamina
-  - Strength
-  statValues:
-  - XP
-  - Level
-  - IncrementAmount
-  - UpgradeCost
---- !u!4 &1818807054
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818807052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926539508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,3 +2741,137 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973969859}
   m_CullTransparentMesh: 0
+--- !u!1001 &4615082070954008034
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645228, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645230, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: m_Name
+      value: _Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: wallet
+      value: 
+      objectReference: {fileID: 1691595488}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: agilityCounter
+      value: 
+      objectReference: {fileID: 1338831758}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: speedCounter
+      value: 
+      objectReference: {fileID: 1969984313}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: staminaCounter
+      value: 
+      objectReference: {fileID: 1424495270}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: strengthCounter
+      value: 
+      objectReference: {fileID: 14633119}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: agilityUpgrade
+      value: 
+      objectReference: {fileID: 1619731251}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: speedUpgrade
+      value: 
+      objectReference: {fileID: 1363970479}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: staminaUpgrade
+      value: 
+      objectReference: {fileID: 1947119655}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: strengthUpgrade
+      value: 
+      objectReference: {fileID: 1323446484}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: agilityIncrement
+      value: 
+      objectReference: {fileID: 1231391309}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: speedIncrement
+      value: 
+      objectReference: {fileID: 1466099026}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: staminaIncrement
+      value: 
+      objectReference: {fileID: 86543520}
+    - target: {fileID: 4615082072490645231, guid: 47f97854f0144784d8771b56e740aa17,
+        type: 3}
+      propertyPath: strengthIncrement
+      value: 
+      objectReference: {fileID: 818521516}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47f97854f0144784d8771b56e740aa17, type: 3}

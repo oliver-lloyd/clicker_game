@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class RaceController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class RaceController : MonoBehaviour
     public float maxSpeed;
     public float xForce;
     public float resistance;
+    public float agilityResistance;
     public GameObject winScreen;
 
    
@@ -34,7 +36,7 @@ public class RaceController : MonoBehaviour
     {
         if (rb2d.velocity.x <= maxSpeed) 
         {
-            rb2d.AddForce(transform.right * (xForce - resistance));
+            rb2d.AddForce(transform.right * (xForce));
         }
         else  
         {
@@ -43,10 +45,18 @@ public class RaceController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("a");
-        if (collision.gameObject.CompareTag("Flag")){
-            print("b");
+        if (collision.gameObject.CompareTag("Flag"))
+        {
             winScreen.SetActive(true);
         }
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("AgilityObstacle"))
+        {
+            rb2d.AddForce(transform.right * -agilityResistance);
+        }
+
     }
 }

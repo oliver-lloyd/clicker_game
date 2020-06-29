@@ -13,6 +13,7 @@ TagManager:
   - Flag
   - Eye
   - WinScreen
+  - AgilityObstacle
   layers:
   - Default
   - TransparentFX
