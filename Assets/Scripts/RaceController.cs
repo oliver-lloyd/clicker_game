@@ -6,19 +6,22 @@ using UnityEngine.UI;
 public class RaceController : MonoBehaviour
 {
 
-    public float maxSpeed;
-    public float xForce;
-    
-    public float agilityResistance;
+    public int maxSpeed;
+    public int xForce;
+    public int maxStamina;
+    public int agilityResistance;
     public GameObject winScreen;
+    
+    
 
-   
     private GameObject creature;
     private GameObject camera;
     private Rigidbody2D rb2d;
     private Vector3 cameraOffset;
     private float speedLimitingForce;
-
+    private int currentStamina;
+    private System.Random rand = new System.Random();
+    private Text staminaDisplay;
 
     void Awake()
     {
@@ -27,18 +30,34 @@ public class RaceController : MonoBehaviour
         cameraOffset = camera.transform.position - creature.transform.position;
         rb2d = creature.GetComponent<Rigidbody2D>();
         speedLimitingForce = -xForce * 10;
+        currentStamina = maxStamina;
+        staminaDisplay = GameObject.FindWithTag("StaminaDisplay").GetComponent<Text>();
+        staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";
     }
 
 
     void Update()
     {
         camera.transform.position = creature.transform.position + cameraOffset;
+        print($"Current stamina: {currentStamina}");
+        print(staminaDisplay.text);
+        
     }
     private void FixedUpdate()
     {
+        
         if (rb2d.velocity.x <= maxSpeed) 
         {
-            rb2d.AddForce(transform.right * (xForce));
+            if (currentStamina > 1)
+            {
+                int randNum = rand.Next(currentStamina + 1);
+                if (randNum == currentStamina)
+                {
+                    currentStamina--;
+                    staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";
+                }
+            }
+            rb2d.AddForce((currentStamina/maxStamina) * (transform.right * xForce));
         }
         else  
         {
@@ -57,7 +76,6 @@ public class RaceController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("AgilityObstacle"))
         {
-            print("Traversing agility obstacle");
             rb2d.AddForce(transform.right * -agilityResistance);
         }
 
