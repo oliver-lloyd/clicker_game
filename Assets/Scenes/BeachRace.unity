@@ -5813,12 +5813,12 @@ PrefabInstance:
     - target: {fileID: 2397256028487351399, guid: c0a823f0d0b48084c908ffdac6c311d0,
         type: 3}
       propertyPath: xForce
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2397256028487351399, guid: c0a823f0d0b48084c908ffdac6c311d0,
         type: 3}
       propertyPath: maxSpeed
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2397256028487351399, guid: c0a823f0d0b48084c908ffdac6c311d0,
         type: 3}

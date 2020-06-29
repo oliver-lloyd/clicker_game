@@ -19,7 +19,7 @@ public class RaceController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector3 cameraOffset;
     private float speedLimitingForce;
-    private int currentStamina;
+    private float currentStamina;
     private System.Random rand = new System.Random();
     private Text staminaDisplay;
 
@@ -39,25 +39,24 @@ public class RaceController : MonoBehaviour
     void Update()
     {
         camera.transform.position = creature.transform.position + cameraOffset;
-        print($"Current stamina: {currentStamina}");
-        print(staminaDisplay.text);
+        
         
     }
     private void FixedUpdate()
     {
-        
+        print(rb2d.velocity);
         if (rb2d.velocity.x <= maxSpeed) 
         {
             if (currentStamina > 1)
             {
-                int randNum = rand.Next(currentStamina + 1);
+                int randNum = rand.Next((int) currentStamina + 1);
                 if (randNum == currentStamina)
                 {
                     currentStamina--;
                     staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";
                 }
             }
-            rb2d.AddForce((currentStamina/maxStamina) * (transform.right * xForce));
+            rb2d.AddForce((currentStamina / maxStamina) * (transform.right * xForce));
         }
         else  
         {
