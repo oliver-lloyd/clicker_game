@@ -8,7 +8,7 @@ public class RaceController : MonoBehaviour
 
     public float maxSpeed;
     public float xForce;
-    public float resistance;
+    
     public float agilityResistance;
     public GameObject winScreen;
 
@@ -17,6 +17,7 @@ public class RaceController : MonoBehaviour
     private GameObject camera;
     private Rigidbody2D rb2d;
     private Vector3 cameraOffset;
+    private float speedLimitingForce;
 
 
     void Awake()
@@ -25,6 +26,7 @@ public class RaceController : MonoBehaviour
         camera = GameObject.FindWithTag("MainCamera");
         cameraOffset = camera.transform.position - creature.transform.position;
         rb2d = creature.GetComponent<Rigidbody2D>();
+        speedLimitingForce = -xForce * 10;
     }
 
 
@@ -40,7 +42,7 @@ public class RaceController : MonoBehaviour
         }
         else  
         {
-            rb2d.AddForce(transform.right * -resistance);
+            rb2d.AddForce(transform.right * speedLimitingForce);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,6 +57,7 @@ public class RaceController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("AgilityObstacle"))
         {
+            print("Traversing agility obstacle");
             rb2d.AddForce(transform.right * -agilityResistance);
         }
 
