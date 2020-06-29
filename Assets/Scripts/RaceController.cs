@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class CreatureController : MonoBehaviour
+public class RaceController : MonoBehaviour
 {
 
     public float maxSpeed;
@@ -12,21 +12,23 @@ public class CreatureController : MonoBehaviour
 
    
     private GameObject creature;
+    private GameObject camera;
     private Rigidbody2D rb2d;
-    private float fixedDeltaTime;
+    private Vector3 cameraOffset;
 
 
     void Awake()
     {
         creature = GameObject.FindWithTag("Creature");
+        camera = GameObject.FindWithTag("MainCamera");
+        cameraOffset = camera.transform.position - creature.transform.position;
         rb2d = creature.GetComponent<Rigidbody2D>();
-        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
-    
+
     void Update()
     {
-        
+        camera.transform.position = creature.transform.position + cameraOffset;
     }
     private void FixedUpdate()
     {
