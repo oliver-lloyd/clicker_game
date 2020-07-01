@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class Manager : MonoBehaviour
+public class CreatureController : MonoBehaviour
 {
     public int coinCount = 1000;
     public Text wallet;
