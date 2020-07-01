@@ -7,15 +7,16 @@ public class RaceController : MonoBehaviour
 {
 
     public int maxSpeed;
-    public int xForce;
+    public int acceleration;
     public int maxStamina;
+    public int agility;
     public int agilityResistance;
     public GameObject winScreen;
-    
-    
 
     private GameObject creature;
     private GameObject camera;
+    private GameObject _Manager;
+    private Dictionary<string, Dictionary<string, int>> statDict = new Dictionary<string, Dictionary<string, int>>();
     private Rigidbody2D rb2d;
     private Vector3 cameraOffset;
     private float speedLimitingForce;
@@ -25,22 +26,30 @@ public class RaceController : MonoBehaviour
 
     void Awake()
     {
+        _Manager = GameObject.FindWithTag("_Manager");
+        
+        // Initialise creature
+        statDict = _Manager.GetComponent<CreatureController>().statDict;
+        maxSpeed = statDict["Speed"]["XP"];
+        acceleration = statDict["Acceleration"]["XP"];
+        maxStamina = statDict["Stamina"]["XP"];
+        agility = statDict["Agility"]["XP"];
         creature = GameObject.FindWithTag("Creature");
+        rb2d = creature.GetComponent<Rigidbody2D>();
+        speedLimitingForce = -acceleration * 10;
+        currentStamina = maxStamina;
+
+        // Initialise UI stuff
         camera = GameObject.FindWithTag("MainCamera");
         cameraOffset = camera.transform.position - creature.transform.position;
-        rb2d = creature.GetComponent<Rigidbody2D>();
-        speedLimitingForce = -xForce * 10;
-        currentStamina = maxStamina;
         staminaDisplay = GameObject.FindWithTag("StaminaDisplay").GetComponent<Text>();
-        staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";
+        staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";    
     }
 
 
     void Update()
     {
         camera.transform.position = creature.transform.position + cameraOffset;
-        
-        
     }
     private void FixedUpdate()
     {
@@ -56,7 +65,7 @@ public class RaceController : MonoBehaviour
                     staminaDisplay.text = $"Stamina: {currentStamina}/{maxStamina}";
                 }
             }
-            rb2d.AddForce((currentStamina / maxStamina) * (transform.right * xForce));
+            rb2d.AddForce((currentStamina / maxStamina) * (transform.right * acceleration));
         }
         else  
         {

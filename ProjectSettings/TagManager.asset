@@ -15,6 +15,7 @@ TagManager:
   - WinScreen
   - AgilityObstacle
   - StaminaDisplay
+  - _Manager
   layers:
   - Default
   - TransparentFX

@@ -3190,7 +3190,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1145900636}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 78380a4bc77d5aa4d9a6bb1ab521b0cc, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5802,7 +5802,12 @@ PrefabInstance:
     - target: {fileID: 3734385670086162224, guid: ce9589ad21e0738478b913ecb3628c46,
         type: 3}
       propertyPath: xForce
-      value: 6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734385670086162224, guid: ce9589ad21e0738478b913ecb3628c46,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3734385670086162228, guid: ce9589ad21e0738478b913ecb3628c46,
         type: 3}

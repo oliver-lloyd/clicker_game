@@ -5,3 +5,4 @@
 - Have a value generated each time training happens based roughly on the players respective stat level with some randomness added and keep track of personal bests and world records and stuff
 	- World records could reward with money
 	- Could offer in game purchases that guarantee good performance or something
+- 4 stats will be agility (affects obstacle passing) acceleration[used to be strength] (affects force being applied) speed (affects max speed) and stamina (affects max stamina
